@@ -1,6 +1,6 @@
 
 # OpenNews - A Chrome extension blocking PayWalls on News Sites
-####Democracy dies behind paywalls.
+#### Democracy dies behind paywalls.
 A simple chrome extension that helps making the navigating the web and Google News easier! Adding more sites on a request basis, feel free to send a PR. I cannot publish this on the Web Store as it is a violation of their terms and conditions. 
 
 I made this because as a student, it isn't practical for me to pay each company tremendous amount of money yearly for their articles. The new PayWall concept just doesn't work for the average student. As always, pay if you can, because you are what keeps Journalism alive. 
