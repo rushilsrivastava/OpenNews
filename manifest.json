@@ -1,0 +1,58 @@
+{
+  "name": "OpenNews",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Get around the paywall for many news sites, and experience an open, free web.",
+  "author": "Rushil Srivastava",
+  "homepage_url": "https://rushilsrivastava.com/software/opennews/",
+  "browser_action": {
+    "default_icon": "icons/icon16.png",
+    "default_popup": "src/html/popup.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "scripts": [
+      "src/js/background.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [{
+    "matches": ["https://cooking.nytimes.com/*"],
+    "css": ["css/nyt.css"]
+  }],
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "https://*.wsj.com/*",
+    "http://*.wsj.com/*",
+    "https://*.wsj.net/*",
+    "https://*.ft.com/*",
+    "http://*.ft.com/*",
+    "https://*.nytimes.com/*",
+    "http://*.nytimes.com/*",
+    "https://*.nyt.com/*",
+    "http://*.nyt.com/*",
+    "https://*.bloomberg.com/*",
+    "http://*.bloomberg.com/*",
+    "https://*.bwbx.io/*",
+    "http://*.bwbx.io/*",
+    "https://*.washingtonpost.com/*",
+    "http://*.washingtonpost.com/*",
+    "http://*.philly.com/*",
+    "https://*.bizjournals.com/*",
+    "http://*.bizjournals.com/*",
+    "http://www.kleinezeitung.at/*",
+    "https://*.theglobeandmail.com/*",
+    "http://*.theglobeandmail.com/*",
+    "https://*.nydailynews.com/*",
+    "http://*.nydailynews.com/*",
+    "https://*.tribdss.com/*",
+    "http://*.tribdss.com/*",
+    "https://*.mercurynews.com/*",
+    "http://*.mercurynews.com/*"
+  ]
+}

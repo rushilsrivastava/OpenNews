@@ -1,0 +1,129 @@
+// new http header parameters to override
+const newHeader = {
+  referer: {
+    name: "Referer",
+    value: "https://www.facebook.com", // or "https://www.twitter.com"
+  },
+  cookie: {
+    name: "Cookie",
+    value: ""
+  },
+  cachecontrol: {
+    name: "Cache-Control",
+    value: "max-age=0"
+  }
+};
+
+// sites that we want to access
+const sites = {
+  washingtonpost: {
+    js: [
+      "*://*.washingtonpost.com/*pwapi/*.js*", // this one causes paywall/ad-wall lightbox for every article
+      "*://*.washingtonpost.com/*drawbridge/drawbridge.js?_*", // this one causes paywall/ad-wall lightbox sometimes with Adblock Plus enabled
+    ]
+  },
+  wsj: {
+    url: "*://*.wsj.com/*",
+    js: [
+      "*://*/*cxense-candy.js", // this one causes a pop up advertisement for every article
+    ]
+  },
+  ft: {
+    url: "*://*.ft.com/*",
+  },
+  nyt: {
+    js: [
+      "*://*.com/*mtr.js", // this one causes a pop up asking for subscription
+    ]
+  },
+  bloomberg: {
+    url: "*://*.bloomberg.com/*",
+    js: [
+      "*://*.bwbx.io/s3/javelin/public/javelin/js/pianola/*",
+    ]
+  },
+  bizjournals: {
+    url: "*://*.bizjournals.com/*",
+    js: [
+      "*://*.bizjournals.com/dist/js/article.min.js*"
+    ]
+  },
+  philly: {
+    url: "*://*.philly.com/*",
+  },
+  kleinezeitung: {
+    url: "*://*.kleinezeitung.at/*",
+  },
+  globeandmail: {
+    js: [
+      "*://*.theglobeandmail.com/pb/gr/c/default/*/story-bundle/*.js*"
+    ]
+  },
+  nydailynews: {
+    url: "*://*.nydailynews.com/*",
+    js: [
+      "*://*.tribdss.com/reg/tribune/*"
+    ]
+  },
+  mercurynews: {
+    url: "*://*.mercurynews.com/*",
+    js: [
+      "*://*.mercurynews.com/_static/*"
+    ]
+  }
+};
+
+// extract all script urls we want to block
+var script_urls = Object.values(sites)
+  .map(site => site.js)
+  .filter(Array.isArray)
+  .reduce((prev, curr) => prev.concat(curr), []);
+
+// extract all main_frame urls we want to override
+var main_frame_urls = Object.values(sites)
+  .map(site => site.url)
+  .filter(url => url);
+
+// add Firefox and Edge support with the global `browser` object
+browser = typeof browser !== "undefined" ? browser : chrome;
+
+browser.webRequest.onBeforeRequest.addListener(
+  function() {
+    console.log("OpenNews [DEBUG]: Blocking Paywall Javascripts");
+
+    return {
+      cancel: true
+    };
+  }, {
+    urls: script_urls,
+    // target is script
+    types: ["script"]
+  }, ["blocking"]
+);
+
+browser.webRequest.onBeforeSendHeaders.addListener(
+  function(details) {
+    console.log("OpenNews [DEBUG]: Modifying Request Headers");
+
+    // remove existing referer and cookie
+    for (let i = 0; i < details.requestHeaders.length; i++) {
+      if (details.requestHeaders[i].name === newHeader.referer.name || details.requestHeaders[i].name === newHeader.cookie.name) {
+        details.requestHeaders.splice(i, 1);
+        i--;
+      }
+    }
+
+    // add new referer
+    details.requestHeaders.push(newHeader.referer);
+    // remove cache
+    details.requestHeaders.push(newHeader.cachecontrol);
+
+    return {
+      requestHeaders: details.requestHeaders
+    };
+  }, {
+    urls: main_frame_urls,
+    // target is the document that is loaded for a top-level frame
+    types: ["main_frame"]
+  }, ["blocking", "requestHeaders"]
+);
