@@ -151,14 +151,12 @@ browser.webRequest.onBeforeSendHeaders.addListener(
 
 chrome.webRequest.onCompleted.addListener(function(details) {
   for (var urlIndex in cookieBasedURLs) {
-    console.log("OpenNews [DEBUG]: Clearing cookies after load");
     var url = cookieBasedURLs[urlIndex];
     baseURL = url.substring(6, url.length - 2)
     chrome.cookies.getAll({domain: baseURL}, function(cookies) {
       for (var i = 0; i < cookies.length; i++) {
-
+        console.log("OpenNews [DEBUG]: Clearing cookies after load");
         var protocol = cookies[i].secure ? 'https://' : 'http://';
-
         chrome.cookies.remove({url: protocol + cookies[i].domain + cookies[i].path, name: cookies[i].name});
 
       }

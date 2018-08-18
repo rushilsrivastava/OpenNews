@@ -1,0 +1,1 @@
+document.getElementById('version').innerHTML = document.getElementById('version').innerHTML + chrome.app.getDetails().version;
