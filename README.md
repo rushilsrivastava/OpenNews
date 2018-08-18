@@ -13,7 +13,7 @@ I cannot publish this on the Chrome Web Store, as it is against their TOS. Pleas
 2. Navigate to `chrome://extensions` on your browser.
 3. Simply, drag and drop.
 4. Enjoy!
-5. Check back here from time to time to see if a new update has been published. I am working on autoupdating and notifications.
+5. Check back here from time to time to see if a new update has been published. Autoupdate should work now, but it's always helpful to check out!
 
 
 
