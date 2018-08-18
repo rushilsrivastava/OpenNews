@@ -9,6 +9,7 @@ I made this because as a student, it isn't practical for me to pay each company 
 ### Supported Websites:
 *   [Wall Street Journal](https://www.wsj.com/)
 *   [New York Times](https://www.nytimes.com/)
+*	[Cooking New York Times](https://cooking.nytimes.com/)
 *   [Financial Times](https://www.ft.com/)
 *   [Bloomberg](https://www.bloomberg.com/)
 *   [Washington Post](https://www.washingtonpost.com)

@@ -4,7 +4,7 @@
   "manifest_version": 2,
   "description": "Get around the paywall for many news sites, and experience an open, free web.",
   "author": "Rushil Srivastava",
-  "homepage_url": "https://rushilsrivastava.com/software/opennews/",
+  "homepage_url": "https://rushilsrivastava.com/extensions/opennews/",
   "browser_action": {
     "default_icon": "icons/icon16.png",
     "default_popup": "src/html/popup.html"
