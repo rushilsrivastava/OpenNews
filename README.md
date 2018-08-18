@@ -33,4 +33,9 @@ I cannot publish this on the Chrome Web Store, as it is against their TOS. Pleas
 *	[Wired](https://wired.com/)
 *	[Medium](https://medium.com/)
 *	[Boston Globe](https://bostonglobe.com/)
+*	[New Yorker](https://www.newyorker.com/)
+*	[LA Times](http://latimes.com/)
+*	[The Age](https://www.theage.com.au/)
+*	[Chicago Tribune](http://www.chicagotribune.com/)
+*	[Harvard Business Review](https://hbr.org/)
 
