@@ -68,21 +68,42 @@ const sites = {
   mercurynews: {
     url: "*://*.mercurynews.com/*",
     js: [
-      "*://*.mercurynews.com/_static/*"
+      "*://*.mercurynews.com/_static/*.js*"
+    ]
+  },
+  wired: {
+    url: "*://*.wired.com/*",
+    cookies: true
+  },
+  medium: {
+    url: "*://*.medium.com/*",
+    js: [
+      "*://cdn-static-1.medium.com/_/fp/gen-js/main-notes.bundle.84wyUGxUdUkjDoQr9oYsLg.js"
+    ]
+  },
+  bostonglobe: {
+    url: "*://*.bostonglobe.com/*",
+    js: [
+      "*://meter.bostonglobe.com/js/meter.js"
     ]
   }
 };
 
 // extract all script urls we want to block
-var script_urls = Object.values(sites)
+var scriptURLs = Object.values(sites)
   .map(site => site.js)
   .filter(Array.isArray)
   .reduce((prev, curr) => prev.concat(curr), []);
 
 // extract all main_frame urls we want to override
-var main_frame_urls = Object.values(sites)
+var mainFrameURLs = Object.values(sites)
   .map(site => site.url)
   .filter(url => url);
+
+// extract all cookie based blocking
+var cookieBasedURLs = Object.values(sites)
+  .filter(site => {return site.cookies == true})
+  .map(site => site.url);
 
 // add Firefox and Edge support with the global `browser` object
 browser = typeof browser !== "undefined" ? browser : chrome;
@@ -95,7 +116,7 @@ browser.webRequest.onBeforeRequest.addListener(
       cancel: true
     };
   }, {
-    urls: script_urls,
+    urls: scriptURLs,
     // target is script
     types: ["script"]
   }, ["blocking"]
@@ -122,8 +143,27 @@ browser.webRequest.onBeforeSendHeaders.addListener(
       requestHeaders: details.requestHeaders
     };
   }, {
-    urls: main_frame_urls,
+    urls: mainFrameURLs,
     // target is the document that is loaded for a top-level frame
     types: ["main_frame"]
   }, ["blocking", "requestHeaders"]
 );
+
+chrome.webRequest.onCompleted.addListener(function(details) {
+  for (var urlIndex in cookieBasedURLs) {
+    console.log("OpenNews [DEBUG]: Clearing cookies after load");
+    var url = cookieBasedURLs[urlIndex];
+    baseURL = url.substring(6, url.length - 2)
+    chrome.cookies.getAll({domain: baseURL}, function(cookies) {
+      for (var i = 0; i < cookies.length; i++) {
+
+        var protocol = cookies[i].secure ? 'https://' : 'http://';
+
+        chrome.cookies.remove({url: protocol + cookies[i].domain + cookies[i].path, name: cookies[i].name});
+
+      }
+    });
+  }
+}, {
+  urls: ["<all_urls>"]
+});

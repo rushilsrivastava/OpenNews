@@ -18,4 +18,7 @@ I made this because as a student, it isn't practical for me to pay each company 
 *   [The Globe and Mail](https://www.theglobeandmail.com/)
 *   [New York Daily News](http://www.nydailynews.com/)
 *   [Mercury News](https://www.mercurynews.com/)
+*	[Wired](https://wired.com/)
+*	[Medium](https://medium.com/)
+*	[Boston Globe](https://bostonglobe.com/)
 
