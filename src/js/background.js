@@ -86,6 +86,29 @@ const sites = {
     js: [
       "*://meter.bostonglobe.com/js/meter.js"
     ]
+  },
+  newyorker: {
+    url: "*://*.newyorker.com/*",
+    cookies: true
+  },
+  latimes: {
+    url: "*://*.latimes.com/*",
+    js: [
+      "*://*.tribdss.com/meter/*"
+    ]
+  },
+  theage: {
+    url: "*://*.theage.com.au/*",
+    cookies: true
+  },
+  chicagotribune: {
+    url: "*://*.chicagotribune.com/*"
+  },
+  hbr: {
+    url: "*://*.hbr.org/*",
+    js: [
+        "*://*.hbr.org/resources/js/*"
+    ]
   }
 };
 

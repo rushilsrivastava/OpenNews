@@ -22,4 +22,8 @@ I made this because as a student, it isn't practical for me to pay each company 
 *	[Wired](https://wired.com/)
 *	[Medium](https://medium.com/)
 *	[Boston Globe](https://bostonglobe.com/)
-
+*	[New Yorker](https://www.newyorker.com/)
+*	[LA Times](http://latimes.com/)
+*	[The Age](https://www.theage.com.au/)
+*	[Chicago Tribune](http://www.chicagotribune.com/)
+*	[Harvard Business Review](https://hbr.org/)
