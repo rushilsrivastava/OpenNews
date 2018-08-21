@@ -6,15 +6,17 @@ A simple chrome extension that helps making the navigating the web and Google Ne
 
 I made this because as a student, it isn't practical for me to pay each company tremendous amount of money yearly for their articles. The new PayWall concept just doesn't work for the average student. As always, pay if you can, because you are what keeps Journalism alive. 
 
-I cannot publish this on the Chrome Web Store, as it is against their TOS. Please check below on the installation process.
+~~I cannot publish this on the Chrome Web Store, as it is against their TOS. Please check below on the installation process.~~
 
-## Installation
+~~## Installation
 1. Download the latest `.crx` file from the [Releases Page](https://github.com/rushilsrivastava/OpenNews/releases)
 2. Navigate to `chrome://extensions` on your browser.
-3. Simply, drag and drop.
-4. Enjoy!
-5. Check back here from time to time to see if a new update has been published. Autoupdate should work now, but it's always helpful to check out!
+3. Turn on Developer Mode
+4. Simply, drag and drop.
+5. Enjoy!
+6. Check back here from time to time to see if a new update has been published. Autoupdate should work now, but it's always helpful to check out!~~
 
+**It seems that Google Web Store accepted my extension. You can download [it here](https://chrome.google.com/webstore/detail/baipbjbpocokgmeemmmgnkbknjfpackn/). I am not sure how long this is going to be up, so I will be maintaining both portals as of now. 
 
 
 ### Supported Websites:
