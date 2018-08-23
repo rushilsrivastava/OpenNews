@@ -1,6 +1,6 @@
 {
   "name": "OpenNews",
-  "version": "0.15",
+  "version": "0.16",
   "manifest_version": 2,
   "description": "Get around the paywall for many news sites, and experience an open, free web.",
   "author": "Rushil Srivastava",
@@ -25,6 +25,7 @@
     "matches": ["https://cooking.nytimes.com/*"],
     "css": ["src/css/nyt.css"]
   }],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
   "permissions": [
     "webRequest",
     "webRequestBlocking",
