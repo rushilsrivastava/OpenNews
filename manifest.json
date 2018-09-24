@@ -1,6 +1,6 @@
 {
   "name": "OpenNews",
-  "version": "0.16",
+  "version": "0.17",
   "manifest_version": 2,
   "description": "Get around the paywall for many news sites, and experience an open, free web.",
   "author": "Rushil Srivastava",
@@ -71,6 +71,8 @@
     "*://*.theage.com.au/*",
     "*://.theage.com.au/*",
     "*://*.hbr.org/*",
-    "*://.hbr.org/*"
+    "*://.hbr.org/*",
+    "*://*.economist.com/*",
+    "*://.economist.com/*"
   ]
 }

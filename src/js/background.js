@@ -103,13 +103,18 @@ const sites = {
     cookies: true
   },
   chicagotribune: {
-    url: "*://*.chicagotribune.com/*"
+    url: "*://*.chicagotribune.com/*",
+    cookies: true
   },
   hbr: {
     url: "*://*.hbr.org/*",
     js: [
         "*://*.hbr.org/resources/js/*"
     ]
+  },
+  economist: {
+    url: "*://*.economist.com/*",
+    cookies: true
   }
 };
 
