@@ -1,8 +1,17 @@
+// all the referers we can use
+const referers = [
+  "https://www.facebook.com",
+  "https://www.twitter.com",
+  "https://www.instagram.com",
+  "https://www.reddit.com",
+  "https://www.google.com"
+];
+
 // new http header parameters to override
 const newHeader = {
   referer: {
     name: "Referer",
-    value: "https://www.facebook.com", // or "https://www.twitter.com"
+    value: referers[Math.floor(Math.random() * referers.length)],
   },
   cookie: {
     name: "Cookie",
@@ -14,18 +23,19 @@ const newHeader = {
   }
 };
 
+
 // sites that we want to access
 const sites = {
   washingtonpost: {
     js: [
-      "*://*.washingtonpost.com/*pwapi/*.js*", // this one causes paywall/ad-wall lightbox for every article
-      "*://*.washingtonpost.com/*drawbridge/drawbridge.js?_*", // this one causes paywall/ad-wall lightbox sometimes with Adblock Plus enabled
+      "*://*.washingtonpost.com/*pwapi/*.js*",
+      "*://*.washingtonpost.com/*drawbridge/drawbridge.js?_*",
     ]
   },
   wsj: {
     url: "*://*.wsj.com/*",
     js: [
-      "*://*/*cxense-candy.js", // this one causes a pop up advertisement for every article
+      "*://*/*cxense-candy.js",
     ]
   },
   ft: {
@@ -33,7 +43,7 @@ const sites = {
   },
   nyt: {
     js: [
-      "*://*.com/*mtr.js", // this one causes a pop up asking for subscription
+      "*://*.com/*mtr.js",
     ]
   },
   bloomberg: {
@@ -79,7 +89,7 @@ const sites = {
   medium: {
     url: "*://*.medium.com/*",
     js: [
-      "*://cdn-static-1.medium.com/_/fp/gen-js/main-notes.bundle.84wyUGxUdUkjDoQr9oYsLg.js"
+      "*://cdn-static-1.medium.com/_/fp/gen-js/main-notes.bundle.*.js"
     ]
   },
   bostonglobe: {
@@ -114,6 +124,13 @@ const sites = {
   },
   economist: {
     url: "*://*.economist.com/*",
+    cookies: true
+  },
+  seattletimes: {
+    url: "*://*.seattletimes.com/*",
+    js: [
+        "*://*.matheranalytics.com/*"
+    ],
     cookies: true
   }
 };
@@ -184,9 +201,8 @@ chrome.webRequest.onCompleted.addListener(function(details) {
     baseURL = url.substring(6, url.length - 2)
     chrome.cookies.getAll({domain: baseURL}, function(cookies) {
       for (var i = 0; i < cookies.length; i++) {
-        console.log("OpenNews [DEBUG]: Clearing cookies after load");
-        var protocol = cookies[i].secure ? 'https://' : 'http://';
-        chrome.cookies.remove({url: protocol + cookies[i].domain + cookies[i].path, name: cookies[i].name});
+        console.log("OpenNews [DEBUG]: Clearing Cookies After Load");
+        chrome.cookies.remove({url: (cookies[i].secure ? "https://" : "http://") + cookies[i].domain + cookies[i].path, name: cookies[i].name});
 
       }
     });

@@ -1,6 +1,6 @@
 {
-  "name": "OpenNews",
-  "version": "0.17",
+  "name": "News Paywall Blocker by OpenNews",
+  "version": "0.18",
   "manifest_version": 2,
   "description": "Get around the paywall for many news sites, and experience an open, free web.",
   "author": "Rushil Srivastava",
@@ -73,6 +73,10 @@
     "*://*.hbr.org/*",
     "*://.hbr.org/*",
     "*://*.economist.com/*",
-    "*://.economist.com/*"
+    "*://.economist.com/*",
+    "*://*.seattletimes.com/*",
+    "*://.seattletimes.com/*",
+    "*://*.matheranalytics.com/*",
+    "*://.matheranalytics.com/*"
   ]
 }
