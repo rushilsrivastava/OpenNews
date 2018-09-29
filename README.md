@@ -44,3 +44,4 @@ I made this because as a student, it isn't practical for me to pay each company 
 *	[Chicago Tribune](http://www.chicagotribune.com/)
 *	[Harvard Business Review](https://hbr.org/)
 *	[The Economist](https://www.economist.com/)
+*	[Seattle Time](https://www.seattletimes.com/)
