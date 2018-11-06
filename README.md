@@ -3,16 +3,15 @@
 # OpenNews - A Chrome extension blocking Paywalls on News Sites
 ## Democracy dies behind paywalls.
 ### Get around the paywall for many news sites, and experience an open, free web.
-A simple chrome extension that helps making the navigating the web and Google News easier! This extension removes paywalls, and other intruding things in your news browsing experience. 
+A dead simple chrome extension that helps make navigating the web and Google News easier! This extension removes paywalls and other intruding things in your news browsing experience. 
 
-I made this because as a student, it isn't practical for me to pay each company tremendous amount of money yearly for their articles. The new PayWall concept just doesn't work for the average student. As always, pay if you can, because you are what keeps Journalism alive. 
-
-~~I cannot publish this on the Chrome Web Store, as it is against their TOS. Please check below on the installation process.~~
-
-**It seems that Google Web Store accepted my extension. You can download [it here](https://chrome.google.com/webstore/detail/baipbjbpocokgmeemmmgnkbknjfpackn/). I am not sure how long this is going to be up, so I will be maintaining both portals as of now.**
+I made this because as a student, it isn't practical for me to pay each company a tremendous amount of money yearly for their articles. The new PayWall concept just doesn't work for the average student. As always, pay if you can, because you are what keeps Journalism alive. 
 
 ## Installation
+### From the Chrome Store
+ 1. [Download the Chrome Extension From the Chrome Web Store](https://chrome.google.com/webstore/detail/baipbjbpocokgmeemmmgnkbknjfpackn/)
 
+### Developer Mode
  1. Download the latest `.crx` file from the [Releases
     Page](https://github.com/rushilsrivastava/OpenNews/releases)
  2. Navigate to `chrome://extensions` on your browser.
