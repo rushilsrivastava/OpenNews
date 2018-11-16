@@ -1,11 +1,12 @@
 {
   "name": "News Paywall Blocker by OpenNews",
-  "version": "0.18",
+  "version": "0.18.1",
   "manifest_version": 2,
-  "description": "Get around the paywall for many news sites, and experience an open, free web.",
+  "description": "Experience a brand new FREE browsing experience bypassing pesky cookie Paywalls!",
   "author": "Rushil Srivastava",
   "homepage_url": "https://rushilsrivastava.com/extensions/opennews/",
   "update_url": "https://rushilsrivastava.com/extensions/opennews/updates.xml",
+  "options_page": "src/html/options.html",
   "browser_action": {
     "default_icon": "icons/icon16.png",
     "default_popup": "src/html/popup.html"
@@ -30,6 +31,7 @@
     "webRequest",
     "webRequestBlocking",
     "cookies",
+    "storage",
     "*://*.wsj.com/*",
     "*://.wsj.com/*",
     "*://*.wsj.net/*",
