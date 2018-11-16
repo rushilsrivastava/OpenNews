@@ -60,13 +60,16 @@ const sites = {
   },
   philly: {
     url: "*://*.philly.com/*",
+    cookies: true
   },
   kleinezeitung: {
     url: "*://*.kleinezeitung.at/*",
+    cookies: true
   },
   globeandmail: {
+    url: "*://*.theglobeandmail.com/*",
     js: [
-      "*://*.theglobeandmail.com/pb/gr/c/default/*/story-bundle/*.js*"
+      "*://*.theglobeandmail.com/pb/gr/c/default/*/story-bundle-js/*.js*",
     ]
   },
   nydailynews: {
