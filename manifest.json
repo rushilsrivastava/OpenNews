@@ -6,7 +6,6 @@
   "author": "Rushil Srivastava",
   "homepage_url": "https://rushilsrivastava.com/extensions/opennews/",
   "update_url": "https://rushilsrivastava.com/extensions/opennews/updates.xml",
-  "options_page": "src/html/options.html",
   "browser_action": {
     "default_icon": "icons/icon16.png",
     "default_popup": "src/html/popup.html"
