@@ -1,10 +1,6 @@
 // all the referers we can use
-const referers = [
-  "https://www.facebook.com",
-  "https://www.twitter.com",
-  "https://www.instagram.com",
-  "https://www.reddit.com",
-  "https://www.google.com"
+const referers = ["https://www.facebook.com", "https://www.twitter.com", "https://www.instagram.com",
+  "https://www.reddit.com", "https://www.google.com"
 ];
 
 // new http header parameters to override
@@ -23,40 +19,29 @@ const newHeader = {
   }
 };
 
-
-// sites that we want to access
+// sites with blocking strategy
 const sites = {
   washingtonpost: {
-    js: [
-      "*://*.washingtonpost.com/*pwapi/*.js*",
-      "*://*.washingtonpost.com/*drawbridge/drawbridge.js?_*",
-    ]
+    js: ["*://*.washingtonpost.com/*pwapi/*.js*", "*://*.washingtonpost.com/*drawbridge/drawbridge.js?_*", ]
   },
   wsj: {
     url: "*://*.wsj.com/*",
-    js: [
-      "*://*/*cxense-candy.js",
-    ]
+    js: ["*://sts3.wsj.net/iweb/static_html_files/cxense-candy.js", ]
   },
   ft: {
     url: "*://*.ft.com/*",
   },
   nyt: {
-    js: [
-      "*://*.com/*mtr.js",
-    ]
+    url: "*://*.nytimes.com/*",
+    js: ["*://meter-svc.nytimes.com/*", ]
   },
   bloomberg: {
     url: "*://*.bloomberg.com/*",
-    js: [
-      "*://*.bwbx.io/s3/javelin/public/javelin/js/pianola/*",
-    ]
+    js: ["*://*.bwbx.io/s3/javelin/public/javelin/js/pianola/*", ]
   },
   bizjournals: {
     url: "*://*.bizjournals.com/*",
-    js: [
-      "*://*.bizjournals.com/dist/js/article.min.js*"
-    ]
+    js: ["*://*.bizjournals.com/dist/js/article.min.js*"]
   },
   philly: {
     url: "*://*.philly.com/*",
@@ -68,21 +53,15 @@ const sites = {
   },
   globeandmail: {
     url: "*://*.theglobeandmail.com/*",
-    js: [
-      "*://*.theglobeandmail.com/pb/gr/c/default/*/story-bundle-js/*.js*",
-    ]
+    js: ["*://*.theglobeandmail.com/pb/gr/c/default/*/story-bundle-js/*.js*", ]
   },
   nydailynews: {
     url: "*://*.nydailynews.com/*",
-    js: [
-      "*://*.tribdss.com/reg/tribune/*"
-    ]
+    js: ["*://*.tribdss.com/reg/tribune/*"]
   },
   mercurynews: {
     url: "*://*.mercurynews.com/*",
-    js: [
-      "*://*.mercurynews.com/_static/*.js"
-    ],
+    js: ["*://*.mercurynews.com/_static/*.js"],
     cookies: true
   },
   wired: {
@@ -91,15 +70,11 @@ const sites = {
   },
   medium: {
     url: "*://*.medium.com/*",
-    js: [
-      "*://cdn-static-1.medium.com/_/fp/gen-js/main-notes.bundle.*.js"
-    ]
+    js: ["*://cdn-static-1.medium.com/_/fp/gen-js/main-notes.bundle.*.js"]
   },
   bostonglobe: {
     url: "*://*.bostonglobe.com/*",
-    js: [
-      "*://meter.bostonglobe.com/js/meter.js"
-    ]
+    js: ["*://meter.bostonglobe.com/js/meter.js"]
   },
   newyorker: {
     url: "*://*.newyorker.com/*",
@@ -107,9 +82,7 @@ const sites = {
   },
   latimes: {
     url: "*://*.latimes.com/*",
-    js: [
-      "*://*.tribdss.com/meter/*"
-    ]
+    js: ["*://*.tribdss.com/meter/*"]
   },
   theage: {
     url: "*://*.theage.com.au/*",
@@ -121,9 +94,7 @@ const sites = {
   },
   hbr: {
     url: "*://*.hbr.org/*",
-    js: [
-        "*://*.hbr.org/resources/js/*"
-    ]
+    js: ["*://*.hbr.org/resources/js/*"]
   },
   economist: {
     url: "*://*.economist.com/*",
@@ -131,9 +102,7 @@ const sites = {
   },
   seattletimes: {
     url: "*://*.seattletimes.com/*",
-    js: [
-        "*://*.matheranalytics.com/*"
-    ],
+    js: ["*://*.matheranalytics.com/*"],
     cookies: true
   }
 };
@@ -151,75 +120,83 @@ var mainFrameURLs = Object.values(sites)
 
 // extract all cookie based blocking
 var cookieBasedURLs = Object.values(sites)
-  .filter(site => {return site.cookies == true})
+  .filter(site => {
+    return site.cookies == true
+  })
   .map(site => site.url);
 
-// add Firefox and Edge support with the global `browser` object
+// add firefox and edge support with the global `browser` object
 browser = typeof browser !== "undefined" ? browser : chrome;
 
-browser.webRequest.onBeforeRequest.addListener(
-  function() {
-    console.log("OpenNews [DEBUG]: Blocking Paywall Javascripts");
-
-    return {
-      cancel: true
-    };
-  }, {
-    urls: scriptURLs,
-    // target is script
-    types: ["script"]
-  }, ["blocking"]
-);
-
-browser.webRequest.onBeforeSendHeaders.addListener(
-  function(details) {
-    console.log("OpenNews [DEBUG]: Modifying Request Headers");
-
-    // remove existing referer and cookie
-    for (let i = 0; i < details.requestHeaders.length; i++) {
-      if (details.requestHeaders[i].name === newHeader.referer.name || details.requestHeaders[i].name === newHeader.cookie.name) {
-        details.requestHeaders.splice(i, 1);
-        i--;
-      }
-    }
-
-    // add new referer
-    details.requestHeaders.push(newHeader.referer);
-    // remove cache
-    details.requestHeaders.push(newHeader.cachecontrol);
-
-    return {
-      requestHeaders: details.requestHeaders
-    };
-  }, {
-    urls: mainFrameURLs,
-    // target is the document that is loaded for a top-level frame
-    types: ["main_frame"]
-  }, ["blocking", "requestHeaders"]
-);
-
-chrome.webRequest.onCompleted.addListener(function(details) {
-  for (var urlIndex in cookieBasedURLs) {
-    var url = cookieBasedURLs[urlIndex];
-    baseURL = url.substring(6, url.length - 2)
-    chrome.cookies.getAll({domain: baseURL}, function(cookies) {
-      for (var i = 0; i < cookies.length; i++) {
-        console.log("OpenNews [DEBUG]: Clearing Cookies After Load");
-        chrome.cookies.remove({url: (cookies[i].secure ? "https://" : "http://") + cookies[i].domain + cookies[i].path, name: cookies[i].name});
-
-      }
-    });
-  }
+// script blocking
+browser.webRequest.onBeforeRequest.addListener(function(details) {
+  var url = new URL(details.url)
+    .hostname
+  console.log(`OpenNews [DEBUG]: Blocking Paywall Javascripts from ${url}`);
+  return {
+    cancel: true
+  };
 }, {
-  urls: ["<all_urls>"]
+  urls: scriptURLs,
+  types: ["script"]
+}, ["blocking"]);
+
+// header blocking
+browser.webRequest.onBeforeSendHeaders.addListener(function(details) {
+  var url = new URL(details.url)
+    .hostname
+  console.log(`OpenNews [DEBUG]: Modifying Request Headers on ${url}`);
+  // remove existing referer and cookie
+  for (let i = 0; i < details.requestHeaders.length; i++) {
+    if (details.requestHeaders[i].name === newHeader.referer.name || details.requestHeaders[i].name === newHeader.cookie
+      .name) {
+      details.requestHeaders.splice(i, 1);
+      i--;
+    }
+  }
+  // add new referer
+  details.requestHeaders.push(newHeader.referer);
+  // remove cache
+  details.requestHeaders.push(newHeader.cachecontrol);
+  return {
+    requestHeaders: details.requestHeaders
+  };
+}, {
+  urls: mainFrameURLs,
+  types: ["main_frame"]
+}, ["blocking", "requestHeaders"]);
+
+// cookie blocking
+browser.webRequest.onCompleted.addListener(function(details) {
+  var url = new URL(details.url)
+    .hostname;
+  var baseURL = url.replace("www", ""); // temporay work around
+  browser.cookies.getAll({
+    domain: baseURL
+  }, function(cookies) {
+    for (var i = 0; i < cookies.length; i++) {
+      console.log(`OpenNews [DEBUG]: Clearing Cookies After Load from ${url}`);
+      browser.cookies.remove({
+        url: (cookies[i].secure ? "https://" : "http://") + cookies[i].domain + cookies[i].path,
+        name: cookies[i].name
+      });
+    }
+  });
+}, {
+  urls: cookieBasedURLs
 });
+
+// analytics
 
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-124175680-1']);
 _gaq.push(['_trackPageview']);
 
 (function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
   ga.src = 'https://ssl.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(ga, s);
 })();

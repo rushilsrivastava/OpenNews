@@ -1,29 +1,49 @@
 <!DOCTYPE html>
-<html style="min-width: 250px; max-height: 275px;">
-  <head>
-    <link rel="stylesheet" href="/src/css/material.min.css">
-    <script src="/src/js/material.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <style>
-    hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 5px solid #fff;
-    margin: 1em 0;
-    padding: 0;
+
+<html>
+<head>
+  <link href="/src/css/material.min.css" rel="stylesheet">
+  <script src="/src/js/material.min.js">
+  </script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    html {
+      min-width: 275px;
+      max-height: 300px;
+      height: 100%;
+      background-image: linear-gradient(to bottom, #86a7d8, #6392de, #417be2, #1f63e3, #0648e0);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      text-align: center;
+      color: white;
     }
-    </style>
-  </head>
-  <body style="text-align: center; color: white; background-color: #337ccefa;">
-    <div style="margin-left: 24px; margin-right: 24px;">
-      <h3>OpenNews</h3>
-      <h5 style="margin-top:-1em;">by Rushil Srivastava</h5>
-      <hr style="margin-top:-0.4em;">
-      <p>You are experiencing a free, open web experience. Why pay for news that should be free?</p>
-      <small style="margin-top: -2em !important; margin-bottom: -2em !important;"><p>Running Version: <b id="version"></b></p></small>
-      <a target="_blank" href="https://rushilsrivastava.com/extensions/opennews/"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Learn More</button></a>
-    </div>
-    <script src="/src/js/popup.js"></script>
-  </body>
+    body {
+      height: 100%;
+      margin: 0;
+    }
+    hr {
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 5px solid #fff;
+      margin: 1em 0;
+      padding: 0;
+    }
+  </style>
+  <title>OpenNews by Rushil Srivastava</title>
+</head>
+
+<body>
+  <div style="margin-left: 20px; margin-right: 20px;">
+    <h3><b>OpenNews</b></h3>
+    <h5 style="margin-top:-1em;">by Rushil Srivastava</h5>
+    <hr style="margin-top:-0.4em;">
+    <p>You are experiencing a free and open web experience. Democracy dies behind paywalls.</p>
+    <h6 style="margin-top: 0em; !important; margin-bottom: 1em; !important;">Running Version: <b id=
+    "version"></b></h6>
+    <a href="https://rushilsrivastava.com/extensions/opennews/" target="_blank"><button class=
+    "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Learn More</button></a>
+  </div>
+  <script src="/src/js/popup.js"></script>
+</body>
 </html>
