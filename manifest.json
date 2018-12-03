@@ -78,6 +78,18 @@
     "*://*.seattletimes.com/*",
     "*://.seattletimes.com/*",
     "*://*.matheranalytics.com/*",
-    "*://.matheranalytics.com/*"
+    "*://.matheranalytics.com/*",
+    "*://*.dn.se/*",
+    "*://.dn.se/*",
+    "*://*.barrons.com/*",
+    "*://.barrons.com/*",
+    "*://*.dailypress.com/*",
+    "*://.dailypress.com/*",
+    "*://*.denverpost.com/*",
+    "*://.denverpost.com/*",
+    "*://*.dynamed.com/*",
+    "*://.dynamed.com/*",
+    "*://*.newyorker.com/*",
+    "*://.newyorker.com/*"
   ]
 }

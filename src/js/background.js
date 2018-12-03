@@ -104,6 +104,31 @@ const sites = {
     url: "*://*.seattletimes.com/*",
     js: ["*://*.matheranalytics.com/*"],
     cookies: true
+  },
+  dn: {
+    url: "*://*.dn.se/*",
+    js: ["*://auth.dn.se/*"]
+  },
+  barrons: {
+    url: "*://*.barrons.com/*",
+    cookies: true
+  },
+  dailypress: {
+    url: "*://*.dailypress.com/*",
+    js: ["*://*.tribdss.com/meter/*"]
+  },
+  denverpost: {
+    url: "*://*.denverpost.com/*",
+    js: ["*://*.matheranalytics.com/*"],
+    cookies: true
+  },
+  dynamed: {
+    url: "*://*.dynamed.com/*",
+    cookies: true
+  },
+  newyorker: {
+    url: "*://*.newyorker.com/*",
+    cookies: true
   }
 };
 
