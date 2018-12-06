@@ -19,7 +19,7 @@ I made this because as a student, it isn't practical for me to pay each company 
  3. Turn on Developer Mode.
  4. Simply, drag and drop.
  5. Enjoy!
- 6. The extension should automagically update, but don't forget you can manually update by clicking the `Update` button on the Extensions page `chrome://extensions`!
+ 6. The extension should automagically update, but you can also manually update by clicking the `Update` button on the Extensions page `chrome://extensions`.
 
 ### Supported Tested Websites:
 * [Wall Street Journal](https://www.wsj.com/)
