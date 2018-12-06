@@ -8,7 +8,7 @@ I made this because as a student, it isn't practical for me to pay each company 
 ## Installation
 ### From the Chrome Store
  1. ~~[Download the Chrome Extension From the Chrome Web Store](https://chrome.google.com/webstore/detail/baipbjbpocokgmeemmmgnkbknjfpackn/)~~
- 2. Enjoy
+ 2. ~~Enjoy~~
  
 ##### As of December 1st, 2018 the Google Chrome team has removed this extension from the store. Hopefully it will be back up soon. Till that time, the best solution is to install the extension using the method shared down below.
 
