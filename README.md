@@ -14,12 +14,12 @@ I made this because as a student, it isn't practical for me to pay each company 
 
 ### From GitHub (auto-updating)
  1. Download the latest `.crx` file from the [Releases
-    Page](https://github.com/rushilsrivastava/OpenNews/releases)
+    Page](https://github.com/rushilsrivastava/OpenNews/releases). Ensure the file is in your default Download directory.
  2. Navigate to `chrome://extensions` on your browser.
  3. Turn on Developer Mode.
  4. Simply, drag and drop.
  5. Enjoy!
- 6. Check back here from time to time to see if a new update has been published. Autoupdate should work now, but it's always helpful to check out!
+ 6. The extension should automagically update, but don't forget you can manually update by clicking the `Update` button on the Extensions page `chrome://extensions`!
 
 ### Supported Tested Websites:
 * [Wall Street Journal](https://www.wsj.com/)
