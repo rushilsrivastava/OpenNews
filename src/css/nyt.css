@@ -3,6 +3,6 @@ html {
     overflow: scroll !important;
 }
 
-.nytc---modal-window---windowContainer .nytc---shared---blackBG .nytc---modal-window---isShown #app-container div[role=dialog] {
+#appContainer {
 	display: none !important;
 }

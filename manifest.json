@@ -1,6 +1,6 @@
 {
   "name": "News Paywall Blocker by OpenNews",
-  "version": "0.19",
+  "version": "0.19.1",
   "manifest_version": 2,
   "description": "Experience a brand new FREE browsing experience bypassing pesky cookie Paywalls!",
   "author": "Rushil Srivastava",
@@ -21,10 +21,17 @@
     ],
     "persistent": true
   },
-  "content_scripts": [{
-    "matches": ["https://cooking.nytimes.com/*"],
-    "css": ["src/css/nyt.css"]
-  }],
+  "content_scripts": [
+    {
+      "matches": ["https://cooking.nytimes.com/*"],
+      "css": ["src/css/nyt.css"]
+    },
+    {
+      "matches": ["https://www.ft.com/*"],
+      "css": ["src/css/ft.css"],
+      "js": ["src/js/ft.js"]
+    }
+  ],
   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
   "permissions": [
     "webRequest",
