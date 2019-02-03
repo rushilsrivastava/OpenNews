@@ -22,6 +22,7 @@ I made this because as a student, it isn't practical for me to pay each company 
  6. The extension should automagically update, but you can also manually update by clicking the `Update` button on the Extensions page `chrome://extensions`.
 
 ### Supported Tested Websites:
+## WSJ has updated their algorithm and will not work for the time being. 
 * [Wall Street Journal](https://www.wsj.com/)
 * [New York Times](https://www.nytimes.com/)
 * [Cooking New York Times](https://cooking.nytimes.com/)
