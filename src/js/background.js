@@ -1,6 +1,6 @@
 // all the referers we can use
-const referers = ["https://www.facebook.com", "https://www.twitter.com", "https://www.instagram.com",
-  "https://www.reddit.com", "https://www.google.com"
+const referers = [
+  "https://news.google.com", "https://www.google.com"
 ];
 
 // new http header parameters to override
@@ -22,11 +22,12 @@ const newHeader = {
 // sites with blocking strategy
 const sites = {
   washingtonpost: {
-    js: ["*://*.washingtonpost.com/*pwapi/*.js*", "*://*.washingtonpost.com/*drawbridge/drawbridge.js?_*", ]
+    js: ["*://*.washingtonpost.com/*pwapi/*.js*", "*://*.washingtonpost.com/*drawbridge/drawbridge.js?_*"]
   },
   wsj: {
     url: "*://*.wsj.com/*",
-    js: ["*://sts3.wsj.net/iweb/static_html_files/cxense-candy.js", ]
+    js: ["*://sts3.wsj.net/iweb/static_html_files/cxense-candy.js", "*://tags.tiqcdn.com/utag/wsjdn/wsj/prod/utag*"],
+    cookies: true
   },
   ft: {
     url: "*://*.ft.com/*",
@@ -37,11 +38,12 @@ const sites = {
   },
   bloomberg: {
     url: "*://*.bloomberg.com/*",
-    js: ["*://*.bwbx.io/s3/javelin/public/javelin/js/pianola/*", ]
+    js: ["*://*.bwbx.io/s3/fence/v4/app.bundle.js"]
   },
   bizjournals: {
     url: "*://*.bizjournals.com/*",
-    js: ["*://*.bizjournals.com/dist/js/article.min.js*"]
+    js: ["*://*.bizjournals.com/dist/js/58.min.js?*"],
+    cookies: true
   },
   philly: {
     url: "*://*.philly.com/*",
@@ -53,7 +55,7 @@ const sites = {
   },
   globeandmail: {
     url: "*://*.theglobeandmail.com/*",
-    js: ["*://*.theglobeandmail.com/pb/gr/c/default/*/story-bundle-js/*.js*", ]
+    js: ["*://*.theglobeandmail.com/pb/gr/c/default/*/story-bundle-js/*.js*"]
   },
   nydailynews: {
     url: "*://*.nydailynews.com/*",

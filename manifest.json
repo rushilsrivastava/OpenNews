@@ -30,6 +30,16 @@
       "matches": ["https://www.ft.com/*"],
       "css": ["src/css/ft.css"],
       "js": ["src/js/ft.js"]
+    },
+    {
+      "matches": ["https://www.bizjournals.com/*"],
+      "js": ["src/js/bizjournals.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://www.wsj.com/*"],
+      "js": ["src/js/arrive.min.js", "src/js/wsj.js"],
+      "run_at": "document_start"
     }
   ],
   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
@@ -97,6 +107,8 @@
     "*://*.dynamed.com/*",
     "*://.dynamed.com/*",
     "*://*.newyorker.com/*",
-    "*://.newyorker.com/*"
+    "*://.newyorker.com/*",
+    "*://*.tiqcdn.com/*",
+    "*://.tiqcdn.com/*"
   ]
 }
