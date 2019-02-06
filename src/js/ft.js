@@ -1,9 +1,15 @@
-window.onload = function () {
-	console.log("Disabling Paywall on FT.com");
-	var disablePaywall = document.createElement("script");
-	var code = 'window.FT.flags["disablePaywall"] = true;';
-	code = code + 'window.FT.flags["ads"] = false;';
-	code = code + 'window.FT.flags["adTargetingUserApi"] = false;';
-	disablePaywall.innerHTML = code;
-	document.head.appendChild(disablePaywall);
-}
+document.arrive("body > script", function() {
+    let script = this.innerHTML;
+    if (script.includes("window.FT.flags")) {
+        console.log("Disabling Paywall on FT.com");
+        var flags = script.substring(script.lastIndexOf("window.FT.flags = ") + 18, script.lastIndexOf("window.FT.nUiConfig = "));
+        flags = flags.replace(/ /g, '').replace(/;/g, '')
+        flags = JSON.parse(flags);
+        flags["disablePaywall"] = true;
+        flags["ads"] = false;
+        flags["adTargetingUserApi"] = false;
+        flags = "window.FT.flags = " + JSON.stringify(flags) + ";";
+        script = script.substring(0, script.lastIndexOf("window.FT.flags = ")) + flags + script.substring(script.lastIndexOf("window.FT.nUiConfig = "))
+        this.innerHTML = script;
+    }
+});

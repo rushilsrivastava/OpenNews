@@ -1,6 +1,6 @@
 // all the referers we can use
 const referers = [
-  "https://news.google.com", "https://www.google.com"
+  "https://www.facebook.com", "https://news.google.com", "https://www.google.com"
 ];
 
 // new http header parameters to override
@@ -30,7 +30,7 @@ const sites = {
     cookies: true
   },
   ft: {
-    url: "*://*.ft.com/*",
+    url: "*://*.ft.com/*"
   },
   nyt: {
     url: "*://*.nytimes.com/*",
@@ -170,9 +170,8 @@ browser.webRequest.onBeforeRequest.addListener(function(details) {
 
 // header blocking
 browser.webRequest.onBeforeSendHeaders.addListener(function(details) {
-  var url = new URL(details.url)
-    .hostname
-  console.log(`OpenNews [DEBUG]: Modifying Request Headers on ${url}`);
+  var url = new URL(details.url).hostname
+  console.log(`OpenNews [DEBUG]: Modifying Request Headers on ${url}.`);
   // remove existing referer and cookie
   for (let i = 0; i < details.requestHeaders.length; i++) {
     if (details.requestHeaders[i].name === newHeader.referer.name || details.requestHeaders[i].name === newHeader.cookie
@@ -191,7 +190,7 @@ browser.webRequest.onBeforeSendHeaders.addListener(function(details) {
 }, {
   urls: mainFrameURLs,
   types: ["main_frame"]
-}, ["blocking", "requestHeaders"]);
+}, ["blocking", "requestHeaders", "extraHeaders"]);
 
 // cookie blocking
 browser.webRequest.onCompleted.addListener(function(details) {

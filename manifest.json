@@ -29,11 +29,12 @@
     {
       "matches": ["https://www.ft.com/*"],
       "css": ["src/css/ft.css"],
-      "js": ["src/js/ft.js"]
+      "js": ["src/js/arrive.min.js", "src/js/ft.js"],
+      "run_at": "document_start"
     },
     {
       "matches": ["https://www.bizjournals.com/*"],
-      "js": ["src/js/bizjournals.js"],
+      "js": ["src/js/arrive.min.js", "src/js/bizjournals.js"],
       "run_at": "document_start"
     },
     {
