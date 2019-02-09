@@ -21,10 +21,8 @@ I made this because as a student, it isn't practical for me to pay each company 
  5. Enjoy!
  6. The extension should automagically update, but you can also manually update by clicking the `Update` button on the Extensions page `chrome://extensions`.
 
-### Broken integrations
-* [Wall Street Journal](https://www.wsj.com/)
-
 ### Supported Tested Websites:
+* [Wall Street Journal](https://www.wsj.com/)
 * [New York Times](https://www.nytimes.com/)
 * [Cooking New York Times](https://cooking.nytimes.com/)
 * [Financial Times](https://www.ft.com/)

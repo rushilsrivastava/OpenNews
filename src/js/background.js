@@ -152,7 +152,7 @@ var cookieBasedURLs = Object.values(sites)
   })
   .map(site => site.url);
 
-// add firefox and edge support with the global `browser` object
+// add firefox and edge support with the global `browser` object #5
 browser = typeof browser !== "undefined" ? browser : chrome;
 
 // script blocking
