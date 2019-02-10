@@ -52,5 +52,6 @@ I made this because as a student, it isn't practical for me to pay each company 
 * [New Yorker](https://www.newyorker.com/)
 * [MIT Technology Review](https://technologyreview.org/)
 * [Foreign Policy](https://foreignpolicy.com)
+* [Sun Sentinel](https://www.sun-sentinel.com/)
 
 Plus many other sites. See a website OpenNews is already blocking not listed here, or want a specific site supported? Open an issue!

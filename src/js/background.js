@@ -140,6 +140,10 @@ const sites = {
     url: "*://*.foreignpolicy.com/*",
     js: ["*://validate.onecount.net/js/all.min.js"],
     cookies: true
+  },
+  sunsentinel: {
+    url: "*://*.sun-sentinel.com/*",
+    js: ["*://ssor.tribdss.com/*"]
   }
 };
 
