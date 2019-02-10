@@ -8,6 +8,6 @@ else if (url.indexOf('&mod=rsswn') != -1)
 
 // redirect
 if (redirect) {
-	console.log("Disabling Paywall on " + window.location.pathname);
+	console.log("Disabling Paywall on WSJ.com");
 	window.location = '//' + location.host + location.pathname + '?mod=rsswn';
 }

@@ -131,6 +131,10 @@ const sites = {
   newyorker: {
     url: "*://*.newyorker.com/*",
     cookies: true
+  },
+  technologyreview: {
+    url: "*://*.technologyreview.com/*",
+    js: ["*://cdn.technologyreview.com/_/dist/js/article.js?v=*"]
   }
 };
 

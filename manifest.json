@@ -1,114 +1,45 @@
 {
-  "name": "News Paywall Blocker by OpenNews",
-  "version": "0.19.2",
-  "manifest_version": 2,
-  "description": "Experience a brand new FREE browsing experience bypassing pesky cookie Paywalls!",
-  "author": "Rushil Srivastava",
-  "homepage_url": "https://rushilsrivastava.com/extensions/opennews/",
-  "update_url": "https://rushilsrivastava.com/extensions/opennews/updates.xml",
-  "browser_action": {
-    "default_icon": "icons/icon16.png",
-    "default_popup": "src/html/popup.html"
-  },
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  },
-  "background": {
-    "scripts": [
-      "src/js/background.js"
-    ],
-    "persistent": true
-  },
-  "content_scripts": [
-    {
-      "matches": ["https://cooking.nytimes.com/*"],
-      "css": ["src/css/nyt.css"]
+    "name": "News Paywall Blocker by OpenNews",
+    "version": "0.19.2",
+    "manifest_version": 2,
+    "description": "Experience a brand new FREE browsing experience bypassing pesky paywalls!",
+    "author": "Rushil Srivastava",
+    "homepage_url": "https://rushilsrivastava.com/extensions/opennews/",
+    "update_url": "https://rushilsrivastava.com/extensions/opennews/updates.xml",
+    "browser_action": {
+        "default_icon": "icons/icon16.png",
+        "default_popup": "src/html/popup.html"
     },
-    {
-      "matches": ["https://www.ft.com/*"],
-      "css": ["src/css/ft.css"],
-      "run_at": "document_start"
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
     },
-    {
-      "matches": ["https://www.bizjournals.com/*"],
-      "js": ["src/js/arrive.min.js", "src/js/bizjournals.js"],
-      "run_at": "document_start"
+    "background": {
+        "scripts": ["src/js/background.js"],
+        "persistent": true
     },
-    {
-      "matches": ["https://www.wsj.com/*"],
-      "js": ["src/js/wsj.js"],
-      "run_at": "document_start"
-    }
-  ],
-  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
-  "permissions": [
-    "webRequest",
-    "webRequestBlocking",
-    "cookies",
-    "storage",
-    "*://*.wsj.com/*",
-    "*://.wsj.com/*",
-    "*://*.wsj.net/*",
-    "*://.wsj.net/*",
-    "*://*.ft.com/*",
-    "*://.ft.com/*",
-    "*://*.nytimes.com/*",
-    "*://.nytimes.com/*",
-    "*://*.nyt.com/*",
-    "*://.nyt.com/*",
-    "*://*.bloomberg.com/*",
-    "*://.bloomberg.com/*",
-    "*://*.bwbx.io/*",
-    "*://.bwbx.io/*",
-    "*://*.washingtonpost.com/*",
-    "*://.washingtonpost.com/*",
-    "*://*.philly.com/*",
-    "*://.philly.com/*",
-    "*://*.bizjournals.com/*",
-    "*://.bizjournals.com/*",
-    "*://*.kleinezeitung.at/*",
-    "*://.kleinezeitung.at/*",
-    "*://*.theglobeandmail.com/*",
-    "*://.theglobeandmail.com/*",
-    "*://*.nydailynews.com/*",
-    "*://.nydailynews.com/*",
-    "*://*.tribdss.com/*",
-    "*://.tribdss.com/*",
-    "*://*.mercurynews.com/*",
-    "*://.mercurynews.com/*",
-    "*://*.wired.com/*",
-    "*://.wired.com/*",
-    "*://*.medium.com/*",
-    "*://.medium.com/*",
-    "*://*.bostonglobe.com/*",
-    "*://.bostonglobe.com/*",
-    "*://*.newyorker.com/*",
-    "*://.newyorker.com/*",
-    "*://*.theage.com.au/*",
-    "*://.theage.com.au/*",
-    "*://*.hbr.org/*",
-    "*://.hbr.org/*",
-    "*://*.economist.com/*",
-    "*://.economist.com/*",
-    "*://*.seattletimes.com/*",
-    "*://.seattletimes.com/*",
-    "*://*.matheranalytics.com/*",
-    "*://.matheranalytics.com/*",
-    "*://*.dn.se/*",
-    "*://.dn.se/*",
-    "*://*.barrons.com/*",
-    "*://.barrons.com/*",
-    "*://*.dailypress.com/*",
-    "*://.dailypress.com/*",
-    "*://*.denverpost.com/*",
-    "*://.denverpost.com/*",
-    "*://*.dynamed.com/*",
-    "*://.dynamed.com/*",
-    "*://*.newyorker.com/*",
-    "*://.newyorker.com/*",
-    "*://*.tiqcdn.com/*",
-    "*://.tiqcdn.com/*"
-  ]
+    "content_scripts": [{
+        "matches": ["https://cooking.nytimes.com/*"],
+        "css": ["src/css/nyt.css"]
+    }, {
+        "matches": ["https://www.ft.com/*"],
+        "css": ["src/css/ft.css"],
+        "run_at": "document_start"
+    }, {
+        "matches": ["https://www.bizjournals.com/*"],
+        "js": ["src/js/arrive.min.js", "src/js/bizjournals.js"],
+        "run_at": "document_start"
+    }, {
+        "matches": ["https://www.wsj.com/*"],
+        "js": ["src/js/wsj.js"],
+        "run_at": "document_start"
+    }, {
+        "matches": ["https://www.technologyreview.com/*"],
+        "js": ["src/js/technology-review.js"],
+        "css": ["src/css/technology-review.css"],
+        "run_at": "document_start"
+    }],
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+    "permissions": ["webRequest", "webRequestBlocking", "cookies", "storage", "*://*.wsj.com/*", "*://.wsj.com/*", "*://*.wsj.net/*", "*://.wsj.net/*", "*://*.ft.com/*", "*://.ft.com/*", "*://*.nytimes.com/*", "*://.nytimes.com/*", "*://*.nyt.com/*", "*://.nyt.com/*", "*://*.bloomberg.com/*", "*://.bloomberg.com/*", "*://*.bwbx.io/*", "*://.bwbx.io/*", "*://*.washingtonpost.com/*", "*://.washingtonpost.com/*", "*://*.philly.com/*", "*://.philly.com/*", "*://*.bizjournals.com/*", "*://.bizjournals.com/*", "*://*.kleinezeitung.at/*", "*://.kleinezeitung.at/*", "*://*.theglobeandmail.com/*", "*://.theglobeandmail.com/*", "*://*.nydailynews.com/*", "*://.nydailynews.com/*", "*://*.tribdss.com/*", "*://.tribdss.com/*", "*://*.mercurynews.com/*", "*://.mercurynews.com/*", "*://*.wired.com/*", "*://.wired.com/*", "*://*.medium.com/*", "*://.medium.com/*", "*://*.bostonglobe.com/*", "*://.bostonglobe.com/*", "*://*.newyorker.com/*", "*://.newyorker.com/*", "*://*.theage.com.au/*", "*://.theage.com.au/*", "*://*.hbr.org/*", "*://.hbr.org/*", "*://*.economist.com/*", "*://.economist.com/*", "*://*.seattletimes.com/*", "*://.seattletimes.com/*", "*://*.matheranalytics.com/*", "*://.matheranalytics.com/*", "*://*.dn.se/*", "*://.dn.se/*", "*://*.barrons.com/*", "*://.barrons.com/*", "*://*.dailypress.com/*", "*://.dailypress.com/*", "*://*.denverpost.com/*", "*://.denverpost.com/*", "*://*.dynamed.com/*", "*://.dynamed.com/*", "*://*.newyorker.com/*", "*://.newyorker.com/*", "*://*.tiqcdn.com/*", "*://.tiqcdn.com/*", "*://*.technologyreview.com/*", "*://.technologyreview.com/*"]
 }
