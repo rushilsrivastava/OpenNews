@@ -51,5 +51,6 @@ I made this because as a student, it isn't practical for me to pay each company 
 * [Dynamed Plus](http://www.dynamed.com/)
 * [New Yorker](https://www.newyorker.com/)
 * [MIT Technology Review](https://technologyreview.org/)
+* [Foreign Policy](https://foreignpolicy.com)
 
 Plus many other sites. See a website OpenNews is already blocking not listed here, or want a specific site supported? Open an issue!

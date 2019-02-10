@@ -135,6 +135,11 @@ const sites = {
   technologyreview: {
     url: "*://*.technologyreview.com/*",
     js: ["*://cdn.technologyreview.com/_/dist/js/article.js?v=*"]
+  },
+  foreignpolicy: {
+    url: "*://*.foreignpolicy.com/*",
+    js: ["*://validate.onecount.net/js/all.min.js"],
+    cookies: true
   }
 };
 
