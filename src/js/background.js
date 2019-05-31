@@ -26,15 +26,14 @@ const sites = {
   },
   wsj: {
     url: "*://*.wsj.com/*",
-    js: ["*://sts3.wsj.net/iweb/static_html_files/cxense-candy.js", "*://tags.tiqcdn.com/utag/wsjdn/wsj/prod/utag*"],
-    cookies: true
+    js: ["*://sts3.wsj.net/iweb/static_html_files/cxense-candy.js", "*://tags.tiqcdn.com/utag/wsjdn/wsj/prod/utag*"]
   },
   ft: {
     url: "*://*.ft.com/*"
   },
   nyt: {
     url: "*://*.nytimes.com/*",
-    js: ["*://meter-svc.nytimes.com/*", ]
+    js: ["*://meter-svc.nytimes.com/*"]
   },
   bloomberg: {
     url: "*://*.bloomberg.com/*",
