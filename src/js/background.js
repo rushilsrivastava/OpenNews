@@ -143,6 +143,10 @@ const sites = {
   sunsentinel: {
     url: "*://*.sun-sentinel.com/*",
     js: ["*://ssor.tribdss.com/*"]
+  },
+  businessinsider: {
+    url: "*://*.businessinsider.com/*",
+    js: ["*://*.tinypass.com/*"]
   }
 };
 
