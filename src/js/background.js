@@ -147,6 +147,10 @@ const sites = {
   businessinsider: {
     url: "*://*.businessinsider.com/*",
     js: ["*://*.tinypass.com/*"]
+  },
+  vanityfair: {
+    url: "*://*.vanityfair.com/*",
+    js: ["*://*.vanityfair.com/verso/static/presenter-articles.*.js"]
   }
 };
 
