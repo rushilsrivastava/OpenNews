@@ -61,7 +61,7 @@ Please open a new issue request and follow the template! Not all websites are do
 
 ### Troubleshooting
 * This extension works best alongside [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm) and [uBlock Origin Extra](https://chrome.google.com/webstore/detail/ublock-origin-extra/pgdnlhfefecpicbbihgmbmffkjpaplco).
-* If a site doesn't work, try turning off uBlock and refreshing. Try toggling the extension and manually checking for updates to ensure you are on the latest version of OpenNews. 
+* If a site doesn't work, try turning off uBlock and refreshing. If that doesn't work, try toggling the extension and manually checking for updates to ensure you are on the latest version of OpenNews. 
 * If none of these work, you can submit an issue [here](https://github.com/rushilsrivastava/OpenNews/issues).
 
 ### Pull Requests
@@ -71,4 +71,4 @@ PRs are welcome.
 Please star this repo if you use this extension :)
 
 ### License
-Bypass Paywalls is [MIT-licensed](https://github.com/rushilsrivastava/OpenNews/blob/master/LICENSE).
+Bypass Paywalls uses the [MIT license](https://github.com/rushilsrivastava/OpenNews/blob/master/LICENSE).
