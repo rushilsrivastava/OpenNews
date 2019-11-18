@@ -24,7 +24,7 @@ OpenNews is much **faster** and **efficient** than other extensions. Furthermore
  
 ##### As of December 1st, 2018 the Google Chrome team has removed this extension from the store. Hopefully it will be back up soon. Till that time, the best solution is to install the extension using the method shared down below.
 
-### Supported Tested Websites:
+### Tested Websites (others work too):
 * [Wall Street Journal](https://www.wsj.com/)
 * [New York Times](https://www.nytimes.com/)
 * [Cooking New York Times](https://cooking.nytimes.com/)
