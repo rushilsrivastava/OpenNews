@@ -2,7 +2,12 @@
 ## "Democracy dies behind paywalls."
 ![Banner](https://raw.githubusercontent.com/rushilsrivastava/OpenNews/master/images/440x280.png)
 
-A dead simple chrome extension that helps make navigating the web easier! This extension removes intruding paywalls and other annoyances in your browsing experience. 
+A dead simple chrome extension that helps make navigating the web easier! This extension removes intruding paywalls and other annoyances in your browsing experience.
+
+### Why is this better than other extensions?
+
+OpenNews is much **faster** and **efficient** than other extensions. Furthermore, OpenNews' method for blocking is versatile and works on many sites, even those not tested before.
+
 
 ## Installation
 ### From GitHub (auto-updating)
@@ -38,6 +43,7 @@ A dead simple chrome extension that helps make navigating the web easier! This e
 * [Boston Globe](https://bostonglobe.com/)
 * [New Yorker](https://www.newyorker.com/)
 * [LA Times](http://latimes.com/)
+* [Washington Times](https://www.washingtontimes.com/)
 * [The Age](https://www.theage.com.au/)
 * [Chicago Tribune](http://www.chicagotribune.com/)
 * [Harvard Business Review](https://hbr.org/)
@@ -50,6 +56,7 @@ A dead simple chrome extension that helps make navigating the web easier! This e
 * [Dynamed Plus](http://www.dynamed.com/)
 * [New Yorker](https://www.newyorker.com/)
 * [MIT Technology Review](https://technologyreview.org/)
+* [MIT Sloan Review](https://sloanreview.mit.edu/)
 * [Foreign Policy](https://foreignpolicy.com)
 * [Sun Sentinel](https://www.sun-sentinel.com/)
 * [Business Insider](https://www.businessinsider.com/)
