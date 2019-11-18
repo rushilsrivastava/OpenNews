@@ -50,11 +50,23 @@ function generateHeader(site) {
             name: "Cookie",
             value: ""
         },
-        cachecontrol: {
+        cacheControl: {
             name: "Cache-Control",
             value: "max-age=0"
         }
     };
+
+    // Googlebot implementation
+    if (site.googleBot == true) { 
+        baseHeader.userAgent = {
+            "name": "User-Agent",
+            "value": "Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible ; Googlebot/2.1 ; +http://www.google.com/bot.html)"
+        }
+        baseHeader.forward = {
+            "name": "X-Forwarded-For",
+            "value": "66.249.66.1"
+        }
+    }
 
     return baseHeader;
 }
@@ -67,7 +79,8 @@ const sites = {
     "wsj.com": {
         url: "*://*.wsj.com/*",
         js: ["*://sts3.wsj.net/iweb/static_html_files/cxense-candy.js", "*://tags.tiqcdn.com/utag/wsjdn/wsj/prod/utag*"],
-        referer: "google"
+        referer: "google",
+        googleBot: true
     },
     "ft.com": {
         url: "*://*.ft.com/*"
@@ -261,7 +274,13 @@ browser.webRequest.onBeforeSendHeaders.addListener(function(details) {
     // add new referer
     details.requestHeaders.push(newHeader.referer);
     // remove cache
-    details.requestHeaders.push(newHeader.cachecontrol);
+    details.requestHeaders.push(newHeader.cacheControl);
+
+    if (newHeader.userAgent != null) { 
+        details.requestHeaders.push(newHeader.userAgent);
+        details.requestHeaders.push(newHeader.forward);
+    }
+
     return {
         requestHeaders: details.requestHeaders
     };
@@ -273,7 +292,7 @@ browser.webRequest.onBeforeSendHeaders.addListener(function(details) {
 // cookie blocking
 browser.webRequest.onCompleted.addListener(function(details) {
     var url = new URL(details.url).hostname;
-    var baseURL = url.replace("www", ""); // temporay work around
+    var baseURL = psl.parse(url).domain;
     browser.cookies.getAll({
         domain: baseURL
     }, function(cookies) {
