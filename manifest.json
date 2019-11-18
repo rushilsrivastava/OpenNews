@@ -16,7 +16,7 @@
         "128": "icons/icon128.png"
     },
     "background": {
-        "scripts": ["src/js/background.js", "src/js/hot-reload.js"],
+        "scripts": ["src/js/background.js", "src/js/hot-reload.js", "src/js/psl.min.js"],
         "persistent": true
     },
     "content_scripts": [{
@@ -37,5 +37,5 @@
         "run_at": "document_start"
     }],
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
-    "permissions": ["webRequest", "webRequestBlocking", "cookies", "storage", "<all_urls>"]
+    "permissions": ["webRequest", "webRequestBlocking", "cookies", "storage", "notifications", "<all_urls>"]
 }

@@ -1,3 +1,31 @@
+// changelog notification
+chrome.runtime.onInstalled.addListener(function(details) {
+    const version = chrome.app.getDetails().version
+    var forumUrl = "https://github.com/rushilsrivastava/OpenNews/";
+    var title = `OpenNews v${version}`;
+    var message = "Thanks for installing! Click here to visit the repo page.";
+    if (details.reason == "update") {
+        title = "OpenNews Updated";
+        message = `Click here to read the changelog for v${version}!`;
+        forumUrl = `https://github.com/rushilsrivastava/OpenNews/releases/tag/v${version}`;
+    }
+
+    var options = {
+      type: "basic",
+      title: title,
+      message: message,
+      iconUrl: "icons/icon48.png"
+    }
+
+    // create notification using forumUrl as id
+    chrome.notifications.create(forumUrl, options, function(notificationId){ }); 
+
+    // create a on Click listener for notifications
+    chrome.notifications.onClicked.addListener(function(notificationId) {
+      chrome.tabs.create({url: notificationId});
+    });  
+});
+
 // all the referers we can use
 const referers = {
     facebook: "https://facebook.com",
@@ -8,7 +36,6 @@ const referers = {
 // new http header parameters to override
 function generateHeader(site) {
     var referer;
-
     if (site.referer == null)
         referer = referers[Object.keys(referers)[Math.floor(Math.random() * Object.keys(referers).length)]];
     else
@@ -222,7 +249,7 @@ browser.webRequest.onBeforeRequest.addListener(function(details) {
 // header blocking
 browser.webRequest.onBeforeSendHeaders.addListener(function(details) {
     var url = new URL(details.url).hostname
-    const newHeader = generateHeader(sites[url]);
+    const newHeader = generateHeader(sites[psl.parse(url).domain]);
     console.log(`OpenNews [DEBUG]: Modifying Request Headers on ${url}.`);
     // remove existing referer and cookie
     for (let i = 0; i < details.requestHeaders.length; i++) {
