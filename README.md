@@ -8,7 +8,6 @@ A dead simple chrome extension that helps make navigating the web easier! This e
 
 OpenNews is much **faster** and **efficient** than other extensions. Furthermore, OpenNews' method for blocking is versatile and works on many sites, even those not tested before.
 
-
 ## Installation
 ### From GitHub (auto-updating)
  1. Download the latest `.crx` file from the [Releases
@@ -60,6 +59,7 @@ OpenNews is much **faster** and **efficient** than other extensions. Furthermore
 * [Foreign Policy](https://foreignpolicy.com)
 * [Sun Sentinel](https://www.sun-sentinel.com/)
 * [Business Insider](https://www.businessinsider.com/)
+* [The Atlantic](https://www.theatlantic.com/)
 
 Plus many other sites...
 

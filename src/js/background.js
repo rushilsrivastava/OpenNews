@@ -206,6 +206,10 @@ const sites = {
     "vanityfair.com": {
         url: "*://*.vanityfair.com/*",
         js: ["*://*.vanityfair.com/verso/static/presenter-articles.*.js"]
+    },
+    "theatlantic.com": {
+        url: "*://*.theatlantic.com/*",
+        cookies: true
     }
 };
 

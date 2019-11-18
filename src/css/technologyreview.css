@@ -1,3 +1,15 @@
+.optanon-alert-box-wrapper {
+	display: none !important;
+}
+
+.hide-accept-button {
+	display: none !important;
+}
+
 .meter {
+	display: none !important;
+}
+
+.jsx-3151335682 {
 	display: none !important;
 }
