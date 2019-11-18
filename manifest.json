@@ -16,7 +16,7 @@
         "128": "icons/icon128.png"
     },
     "background": {
-        "scripts": ["src/js/background.js"],
+        "scripts": ["src/js/background.js", "src/js/hot-reload.js"],
         "persistent": true
     },
     "content_scripts": [{
@@ -29,10 +29,6 @@
     }, {
         "matches": ["https://www.bizjournals.com/*"],
         "js": ["src/js/arrive.min.js", "src/js/bizjournals.js"],
-        "run_at": "document_start"
-    }, {
-        "matches": ["https://www.wsj.com/*"],
-        "js": ["src/js/wsj.js"],
         "run_at": "document_start"
     }, {
         "matches": ["https://www.technologyreview.com/*"],
