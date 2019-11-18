@@ -60,6 +60,8 @@ OpenNews is much **faster** and **efficient** than other extensions. Furthermore
 * [Sun Sentinel](https://www.sun-sentinel.com/)
 * [Business Insider](https://www.businessinsider.com/)
 * [The Atlantic](https://www.theatlantic.com/)
+* [Vanity Fair](https://www.vanityfair.com/)
+* [The Telegraph](https://www.telegraph.co.uk/)
 
 Plus many other sites...
 

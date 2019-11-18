@@ -210,6 +210,10 @@ const sites = {
     "theatlantic.com": {
         url: "*://*.theatlantic.com/*",
         cookies: true
+    },
+    "telegraph.co.uk": {
+        url: "*://*.telegraph.co.uk/*",
+        googleBot: true
     }
 };
 
