@@ -71,4 +71,4 @@ PRs are welcome.
 Please star this repo if you use this extension :)
 
 ### License
-Bypass Paywalls uses the [MIT license](https://github.com/rushilsrivastava/OpenNews/blob/master/LICENSE).
+OpenNews uses the [MIT license](https://github.com/rushilsrivastava/OpenNews/blob/master/LICENSE).
