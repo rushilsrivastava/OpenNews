@@ -35,6 +35,10 @@
         "js": ["src/js/technologyreview.js"],
         "css": ["src/css/technologyreview.css"],
         "run_at": "document_start"
+    }, {
+        "matches": ["https://www.wired.com/*"],
+        "css": ["src/css/wired.css"],
+        "run_at": "document_start"
     }],
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
     "permissions": ["webRequest", "webRequestBlocking", "cookies", "storage", "notifications", "<all_urls>"]
