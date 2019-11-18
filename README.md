@@ -1,5 +1,7 @@
 # OpenNews - A Paywall-Killing Chrome Extension
 ## "Democracy dies behind paywalls."
+![Banner](https://raw.githubusercontent.com/rushilsrivastava/OpenNews/master/images/440x280.png)
+
 A dead simple chrome extension that helps make navigating the web easier! This extension removes intruding paywalls and other annoyances in your browsing experience. 
 
 ## Installation
