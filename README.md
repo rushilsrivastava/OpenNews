@@ -1,17 +1,8 @@
-# OpenNews - A Chrome extension blocking Paywalls on News Sites
-## Democracy dies behind paywalls.
-### Get around the paywall for many news sites, and experience an open, free web.
-A dead simple chrome extension that helps make navigating the web and Google News easier! This extension removes paywalls and other intruding things in your news browsing experience. 
-
-I made this because as a student, it isn't practical for me to pay each company a tremendous amount of money yearly for their articles. The new PayWall concept just doesn't work for the average student. As always, pay if you can, because you are what keeps Journalism alive. 
+# OpenNews - A Paywall-Killing Chrome Extension
+## "Democracy dies behind paywalls."
+A dead simple chrome extension that helps make navigating the web easier! This extension removes intruding paywalls and other annoyances in your browsing experience. 
 
 ## Installation
-### From the Chrome Store
- 1. ~~[Download the Chrome Extension From the Chrome Web Store](https://chrome.google.com/webstore/detail/baipbjbpocokgmeemmmgnkbknjfpackn/)~~
- 2. ~~Enjoy~~
- 
-##### As of December 1st, 2018 the Google Chrome team has removed this extension from the store. Hopefully it will be back up soon. Till that time, the best solution is to install the extension using the method shared down below.
-
 ### From GitHub (auto-updating)
  1. Download the latest `.crx` file from the [Releases
     Page](https://github.com/rushilsrivastava/OpenNews/releases). Ensure the file is in your default Download directory.
@@ -20,6 +11,12 @@ I made this because as a student, it isn't practical for me to pay each company 
  4. Simply, drag and drop.
  5. Enjoy!
  6. The extension should automagically update, but you can also manually update by clicking the `Update` button on the Extensions page `chrome://extensions`.
+
+### From the Chrome Store
+ 1. ~~[Download the Chrome Extension From the Chrome Web Store](https://chrome.google.com/webstore/detail/baipbjbpocokgmeemmmgnkbknjfpackn/)~~
+ 2. ~~Enjoy~~
+ 
+##### As of December 1st, 2018 the Google Chrome team has removed this extension from the store. Hopefully it will be back up soon. Till that time, the best solution is to install the extension using the method shared down below.
 
 ### Supported Tested Websites:
 * [Wall Street Journal](https://www.wsj.com/)
@@ -55,4 +52,21 @@ I made this because as a student, it isn't practical for me to pay each company 
 * [Sun Sentinel](https://www.sun-sentinel.com/)
 * [Business Insider](https://www.businessinsider.com/)
 
-Plus many other sites. See a website OpenNews is already blocking not listed here, or want a specific site supported? Open an issue!
+Plus many other sites...
+
+### New Site Requests
+Please open a new issue request and follow the template! Not all websites are doable since they may behind a hard paywall.
+
+### Troubleshooting
+* This extension works best alongside [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm) and [uBlock Origin Extra](https://chrome.google.com/webstore/detail/ublock-origin-extra/pgdnlhfefecpicbbihgmbmffkjpaplco).
+* If a site doesn't work, try turning off uBlock and refreshing. Try toggling the extension and manually checking for updates to ensure you are on the latest version of OpenNews. 
+* If none of these work, you can submit an issue [here](https://github.com/rushilsrivastava/OpenNews/issues).
+
+### Pull Requests
+PRs are welcome.
+
+### Support
+Please star this repo if you use this extension :)
+
+### License
+Bypass Paywalls is [MIT-licensed](https://github.com/rushilsrivastava/OpenNews/blob/master/LICENSE).
