@@ -214,6 +214,7 @@ browser = typeof browser !== "undefined" ? browser : chrome;
 browser.webRequest.onBeforeRequest.addListener(function(details) {
     var url = new URL(details.url).hostname
     console.log(`OpenNews [DEBUG]: Blocking Paywall Javascripts from ${url}`);
+    console.log(details.url)
     return {
         cancel: true
     };
