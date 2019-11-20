@@ -1,2 +1,2 @@
-console.log("Disabling Paywall on TechnologyReview.org")
+console.log(`Disabling Paywall on ${window.location.hostname}`)
 localStorage.clear();

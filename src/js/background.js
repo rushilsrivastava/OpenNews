@@ -83,12 +83,14 @@ const sites = {
         googleBot: true
     },
     "ft.com": {
-        url: "*://*.ft.com/*"
+        url: "*://*.ft.com/*",
+        referer: "google"
     },
     "nytimes.com": {
         url: "*://*.nytimes.com/*",
         js: ["*://meter-svc.nytimes.com/meter.js*", "*://cdn.optimizely.com/public/*/s/vi_article.js"],
-        referer: "google"
+        referer: "google",
+        cookies: true
     },
     "bloomberg.com": {
         url: "*://*.bloomberg.com/*",
@@ -257,7 +259,7 @@ browser.webRequest.onBeforeRequest.addListener(function(details) {
 
     cleanedURL = url.toString();
 
-    console.log("OpenNews [DEBUG]: Redirecting WSJ from " + details.url);
+    console.log(`OpenNews [DEBUG]: Redirecting WSJ from ${details.url}`);
 
     return {
         redirectUrl: cleanedURL
@@ -271,7 +273,7 @@ browser.webRequest.onBeforeRequest.addListener(function(details) {
 browser.webRequest.onBeforeSendHeaders.addListener(function(details) {
     var url = new URL(details.url).hostname
     const newHeader = generateHeader(sites[psl.parse(url).domain]);
-    console.log(`OpenNews [DEBUG]: Modifying Request Headers on ${url}.`);
+    console.log(`OpenNews [DEBUG]: Modifying Request Headers on ${url}`);
     // remove existing referer and cookie
     for (let i = 0; i < details.requestHeaders.length; i++) {
         if (details.requestHeaders[i].name === newHeader.referer.name || details.requestHeaders[i].name === newHeader.cookie.name) {
@@ -304,8 +306,8 @@ browser.webRequest.onCompleted.addListener(function(details) {
     browser.cookies.getAll({
         domain: baseURL
     }, function(cookies) {
+        console.log(`OpenNews [DEBUG]: Clearing Cookies After Load from ${url}`);
         for (var i = 0; i < cookies.length; i++) {
-            console.log(`OpenNews [DEBUG]: Clearing Cookies After Load from ${url}`);
             browser.cookies.remove({
                 url: (cookies[i].secure ? "https://" : "http://") + cookies[i].domain + cookies[i].path,
                 name: cookies[i].name
