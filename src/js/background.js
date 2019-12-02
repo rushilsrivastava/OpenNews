@@ -115,7 +115,7 @@ const sites = {
     },
     "nydailynews.com": {
         url: "*://*.nydailynews.com/*",
-        js: ["*://*.tribdss.com/reg/tribune/*"]
+        js: ["*://*.tribdss.com/reg/tribune/*", "*://ssor.platform.californiatimes.com/reg/tribune/*"]
     },
     "mercurynews.com": {
         url: "*://*.mercurynews.com/*",
@@ -141,7 +141,7 @@ const sites = {
     },
     "latimes.com": {
         url: "*://*.latimes.com/*",
-        js: ["*://*.tribdss.com/meter/*"]
+        js: ["*://*.tribdss.com/meter/*", "*://ssor.platform.californiatimes.com/reg/tribune/*"]
     },
     "theage.com.au": {
         url: "*://*.theage.com.au/*",
@@ -174,7 +174,7 @@ const sites = {
     },
     "dailypress.com": {
         url: "*://*.dailypress.com/*",
-        js: ["*://*.tribdss.com/meter/*"]
+        js: ["*://*.tribdss.com/meter/*", "*://ssor.platform.californiatimes.com/reg/tribune/*"]
     },
     "denverpost.com": {
         url: "*://*.denverpost.com/*",
@@ -200,7 +200,7 @@ const sites = {
     },
     "sun-sentinel.com": {
         url: "*://*.sun-sentinel.com/*",
-        js: ["*://ssor.tribdss.com/*"]
+        js: ["*://ssor.tribdss.com/*", "*://ssor.platform.californiatimes.com/reg/tribune/*"]
     },
     "businessinsider.com": {
         url: "*://*.businessinsider.com/*",
