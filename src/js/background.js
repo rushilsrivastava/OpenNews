@@ -124,7 +124,8 @@ const sites = {
     },
     "wired.com": {
         url: "*://*.wired.com/*",
-        cookies: true
+        cookies: true,
+        onlyCookies: ["pay_ent_smp"]
     },
     "medium.com": {
         url: "*://*.medium.com/*",
@@ -302,12 +303,16 @@ browser.webRequest.onBeforeSendHeaders.addListener(function(details) {
 // cookie blocking
 browser.webRequest.onCompleted.addListener(function(details) {
     var url = new URL(details.url).hostname;
-    var baseURL = psl.parse(url).domain;
+    var baseDomain = psl.parse(url).domain;
+
     browser.cookies.getAll({
-        domain: baseURL
+        domain: baseDomain
     }, function(cookies) {
         console.log(`OpenNews [DEBUG]: Clearing Cookies After Load from ${url}`);
         for (var i = 0; i < cookies.length; i++) {
+            if ("onlyCookies" in sites[baseDomain] && !sites[baseDomain].onlyCookies.includes(cookies[i].name)) { 
+                continue; // pass on cookie if not included 
+            } 
             browser.cookies.remove({
                 url: (cookies[i].secure ? "https://" : "http://") + cookies[i].domain + cookies[i].path,
                 name: cookies[i].name
