@@ -37,7 +37,6 @@
         "run_at": "document_start"
     }, {
         "matches": ["https://www.wired.com/*"],
-        "js": ["src/js/wired.js"],
         "css": ["src/css/wired.css"],
         "run_at": "document_start"
     }],
