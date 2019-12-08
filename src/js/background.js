@@ -133,7 +133,7 @@ const sites = {
     },
     "bostonglobe.com": {
         url: "*://*.bostonglobe.com/*",
-        js: ["*://meter.bostonglobe.com/js/meter.js"]
+        js: ["*://meter.bostonglobe.com/js/meter.js*"]
     },
     "newyorker.com": {
         url: "*://*.newyorker.com/*",
