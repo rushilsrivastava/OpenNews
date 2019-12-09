@@ -74,7 +74,8 @@ function generateHeader(site) {
 // sites with blocking strategy
 const sites = {
     "washingtonpost.com": {
-        js: ["*://*.washingtonpost.com/*pwapi/*.js*", "*://*.washingtonpost.com/*drawbridge/drawbridge.js?_*"]
+        url: "*://*.washingtonpost.com/*",
+        cookies: true
     },
     "wsj.com": {
         url: "*://*.wsj.com/*",
@@ -157,7 +158,7 @@ const sites = {
     },
     "economist.com": {
         url: "*://*.economist.com/*",
-        cookies: true
+        js: ["*://cdn.tinypass.com/api/tinypass.min.js"]
     },
     "seattletimes.com": {
         url: "*://*.seattletimes.com/*",
